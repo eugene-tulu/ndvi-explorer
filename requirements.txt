@@ -1,0 +1,12 @@
+streamlit
+streamlit-folium
+folium
+geopandas
+shapely
+pystac-client
+planetary-computer
+stackstac
+rioxarray
+xarray
+dask
+plotly
