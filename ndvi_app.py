@@ -76,6 +76,7 @@ def compute_ndvi_workflow(items, original_gdf):
 
         # Rebuild gdf
         gdf = gpd.GeoDataFrame(geometry=original_gdf.geometry)
+        bounds = gdf.total_bounds.tolist()
 
         # Stack
         stack = stackstac.stack(
@@ -83,11 +84,9 @@ def compute_ndvi_workflow(items, original_gdf):
             assets=["B08", "B04"],
             resolution=10,
             epsg=6933,
-            dtype="float"
+            dtype="float",
+            bounds_latlon=bounds
         )
-        
-        st.write("🧮 Stack dimensions:", stack.dims)
-        st.write("📊 Stack bands:", stack.band.values)
 
         # Reproject geometry to match stack CRS
         gdf_proj = gdf.to_crs(stack.rio.crs)
