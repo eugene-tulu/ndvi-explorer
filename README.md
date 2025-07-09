@@ -1,4 +1,4 @@
-## 🌿 NDVI Explorer - Microsoft Planetary Computer
+## 🌿 NDVI Explorer
 
 ### Overview
 This Streamlit application enables users to analyze vegetation health (NDVI) using Sentinel-2 satellite imagery from Microsoft Planetary Computer. Users can define an Area of Interest (AOI) by drawing on a map or uploading a GeoJSON file, then generate NDVI composites and statistics for custom date ranges.
@@ -83,9 +83,6 @@ streamlit run app.py
 - Maximum AOI size: 500 km²
 - Requires stable internet connection
 - Processing time increases with larger AOIs/longer date ranges
-
-### License
-MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 Built using Streamlit, Planetary Computer & STAC
