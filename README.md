@@ -42,7 +42,7 @@ planetary-computer
 ### Installation
 1. Clone repository:
 ```bash
-git clone https://github.com/yourusername/ndvi-explorer.git
+git clone https://github.com/eugene-tulu/ndvi-explorer.git
 cd ndvi-explorer
 ```
 
