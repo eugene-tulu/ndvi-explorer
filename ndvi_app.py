@@ -54,8 +54,7 @@ def fetch_items(bounds, date_range, cloud_limit):
     items = list(search.get_items())
     
     if len(items) > 0:
-        st.write("✅ First STAC item ID:", items[0].id)
-        st.write("📦 Available items:", len(items))
+        st.write("📦 Available images:", len(items))
     return items
 
 # Best items
@@ -167,7 +166,7 @@ if run_button:
             st.stop()
 
         best_items = filter_best_items(items)
-        st.info(f"{len(best_items)} best scenes selected.")
+        st.info(f"{len(best_items)} best scene(s) selected.")
 
         # Compute NDVI
         result = compute_ndvi_workflow(best_items, gdf)
