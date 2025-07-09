@@ -23,7 +23,7 @@ MAX_AREA_KM2 = 500
 
 # App Configuration
 st.set_page_config(layout="wide")
-st.title("🌿 NDVI Explorer - Microsoft Planetary Computer")
+st.title("🌿 NDVI Explorer")
 st.markdown("Upload a GeoJSON file or draw an AOI, then choose a date range to compute NDVI from Sentinel-2 imagery.")
 
 # Sidebar Inputs
@@ -196,4 +196,4 @@ if run_button:
         st.exception(e)
 
 st.markdown("---")
-st.markdown("Built with ❤️ using Streamlit, Planetary Computer & STAC")
+st.markdown("Built using Streamlit, Planetary Computer & STAC")
