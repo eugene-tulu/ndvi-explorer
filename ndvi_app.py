@@ -20,20 +20,20 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Constants
+# Constants
 MAX_AREA_KM2 = 500
-GA_MEASUREMENT_ID = os.getenv("GA_MEASUREMENT_ID")
+GA_MEASUREMENT_ID = st.secrets.get("GA_MEASUREMENT_ID", None)
 
 if GA_MEASUREMENT_ID:
-    components.html(f"""
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    st.html(f"""
     <script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){{dataLayer.push(arguments);}}
       gtag('js', new Date());
-      gtag('config', '{GA_MEASUREMENT_ID}', {{ 'send_page_view': true }});
+      gtag('config', '{GA_MEASUREMENT_ID}');
     </script>
-    """, height=0)
+    """, height=1)
     
 # App Configuration
 st.set_page_config(layout="wide")
