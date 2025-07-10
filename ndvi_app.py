@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 from streamlit_folium import st_folium
 import folium
 from shapely.geometry import shape
@@ -20,20 +19,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Constants
-# Constants
 MAX_AREA_KM2 = 500
-GA_MEASUREMENT_ID = st.secrets.get("GA_MEASUREMENT_ID", None)
-
-if GA_MEASUREMENT_ID:
-    st.html(f"""
-    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){{dataLayer.push(arguments);}}
-      gtag('js', new Date());
-      gtag('config', '{GA_MEASUREMENT_ID}');
-    </script>
-    """, height=1)
     
 # App Configuration
 st.set_page_config(layout="wide")
