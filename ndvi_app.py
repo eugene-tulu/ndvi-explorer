@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from streamlit_folium import st_folium
 import folium
 from shapely.geometry import shape
@@ -20,7 +21,20 @@ warnings.filterwarnings("ignore")
 
 # Constants
 MAX_AREA_KM2 = 500
+GA_MEASUREMENT_ID = os.getenv("GA_MEASUREMENT_ID")
 
+if GA_MEASUREMENT_ID:
+    components.html(f"""
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GA_MEASUREMENT_ID}', {{ 'send_page_view': true }});
+    </script>
+    """, height=0)
+    
 # App Configuration
 st.set_page_config(layout="wide")
 st.title("🌿 NDVI Explorer")
